@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Name - Portfolio</title>
+    <script src="https://unpkg.com/htmx.org@1.6.1"></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about" hx-get="/about" hx-target="#content">About Me</a></li>
+            <li><a href="#projects" hx-get="/projects" hx-target="#content">Projects</a></li>
+            <li><a href="#contact" hx-get="/contact" hx-target="#content">Contact</a></li>
+        </ul>
+    </nav>
+    <main id="content">
+        <!-- Content will be loaded here -->
+    </main>
+</body>
+</html>

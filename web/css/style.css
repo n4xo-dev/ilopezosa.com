@@ -89,7 +89,7 @@ footer p {
 /* Success and Error Message Styles */
 .message {
   padding: 15px;
-  margin-bottom: 20px;
+  margin: 20px 0px;
   border-radius: 5px;
   color: #fff;
   font-size: 1em;
@@ -105,4 +105,13 @@ footer p {
 
 .message p {
   margin: 0;
+}
+
+.htmx-indicator {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.htmx-request .htmx-indicator {
+  opacity: 1;
 }

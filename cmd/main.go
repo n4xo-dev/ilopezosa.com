@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strings"
+	"time"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -23,6 +24,7 @@ func main() {
 	})
 
 	app.Post("/contact", func(c *fiber.Ctx) error {
+		time.Sleep(5 * time.Second)
 		name := c.FormValue("name")
 		email := c.FormValue("email")
 		message := c.FormValue("message")

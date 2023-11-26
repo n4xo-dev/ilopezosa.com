@@ -1,3 +1,4 @@
 .air.toml
 .DS_Store
 tmp/
+node_modules/

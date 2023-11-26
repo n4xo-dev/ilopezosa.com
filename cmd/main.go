@@ -17,9 +17,11 @@ func main() {
 		return c.SendFile("./web/about.html")
 	})
 	app.Get("/projects", func(c *fiber.Ctx) error {
+		fmt.Println("Projects")
 		return c.SendFile("./web/projects.html")
 	})
 	app.Get("/contact", func(c *fiber.Ctx) error {
+		fmt.Println("Contact")
 		return c.SendFile("./web/contact.html")
 	})
 

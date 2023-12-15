@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
+
+.text-shadow-transparent {
+  text-shadow: 0 0 0 transparent;
+}

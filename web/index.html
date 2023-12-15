@@ -5,27 +5,19 @@
     <script src="https://unpkg.com/htmx.org@1.6.1"></script>
     <link rel="stylesheet" href="./output.css">
 </head>
-<body class="bg-slate-50">
-    <header>
-        <h1 class="text-5xl m-4 font-bold text-center">Ignacio Lopezosa Serrano</h1>
+<body class="bg-slate-200">
+    <header class="text-slate-600 transition duration-300 hover:bg-white hover:text-black">
+        <a href="#home" hx-get="/home" hx-target="#content">
+            <h1 class="text-shadow-transparent text-7xl p-4 font-bold text-center">Ignacio Lopezosa Serrano</h1>
+        </a>
     </header>
     <nav class="bg-slate-300 sticky top-0 content">
-        <ul class="flex justify-center items-center">
-            <li class="mx-6"><a class="hover:text-neutral-50" href="#about" hx-get="/about" hx-target="#content">About Me</a></li>
-            <li class="mx-6"><a class="hover:text-neutral-50" href="#projects" hx-get="/projects" hx-target="#content">Projects</a></li>
-            <li class="mx-6"><a class="hover:text-neutral-50" href="#contact" hx-get="/contact" hx-target="#content">Contact</a></li>
+        <ul class="flex justify-center items-center text-3xl">
+            <li class="mx-20 p-3 transition duration-150 hover:text-neutral-50"><a href="#about" hx-get="/about" hx-target="#content">About me</a></li>
+            <li class="mx-20 p-3 transition duration-150 hover:text-neutral-50"><a href="#projects" hx-get="/projects" hx-target="#content">Projects</a></li>
+            <li class="mx-20 p-3 transition duration-150 hover:text-neutral-50"><a href="#contact" hx-get="/contact" hx-target="#content">Contact</a></li>
         </ul>
     </nav>
-    <main id="content" class="mx-10">
-        <p class="m-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl quis aliquam ultricies, nunc nisl ultricies nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl quis aliquam ultricies, nunc nisl ultricies nunc, quis aliquam nisl nisl vitae nisl.</p>
-        <p class="m-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl quis aliquam ultricies, nunc nisl ultricies nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl quis aliquam ultricies, nunc nisl ultricies nunc, quis aliquam nisl nisl vitae nisl.</p>
-        <p class="m-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl quis aliquam ultricies, nunc nisl ultricies nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl quis aliquam ultricies, nunc nisl ultricies nunc, quis aliquam nisl nisl vitae nisl.</p>
-        <p class="m-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl quis aliquam ultricies, nunc nisl ultricies nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl quis aliquam ultricies, nunc nisl ultricies nunc, quis aliquam nisl nisl vitae nisl.</p>
-        <p class="m-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl quis aliquam ultricies, nunc nisl ultricies nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl quis aliquam ultricies, nunc nisl ultricies nunc, quis aliquam nisl nisl vitae nisl.</p>
-        <p class="m-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl quis aliquam ultricies, nunc nisl ultricies nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl quis aliquam ultricies, nunc nisl ultricies nunc, quis aliquam nisl nisl vitae nisl.</p>
-        <p class="m-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl quis aliquam ultricies, nunc nisl ultricies nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl quis aliquam ultricies, nunc nisl ultricies nunc, quis aliquam nisl nisl vitae nisl.</p>
-        <p class="m-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl quis aliquam ultricies, nunc nisl ultricies nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl quis aliquam ultricies, nunc nisl ultricies nunc, quis aliquam nisl nisl vitae nisl.</p>
-        <p class="m-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl quis aliquam ultricies, nunc nisl ultricies nunc, quis aliquam nisl nisl vitae nisl. Sed euismod, nisl quis aliquam ultricies, nunc nisl ultricies nunc, quis aliquam nisl nisl vitae nisl.</p>
-    </main>
+    <main id="content" class="mx-10 text-2xl" hx-get="/home" hx-trigger="load"></main>
 </body>
 </html>

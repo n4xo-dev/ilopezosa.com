@@ -13,6 +13,9 @@ func main() {
 
 	app.Static("/", "./web")
 
+	app.Get("/home", func(c *fiber.Ctx) error {
+		return c.SendFile("./web/home.html")
+	})
 	app.Get("/about", func(c *fiber.Ctx) error {
 		return c.SendFile("./web/about.html")
 	})

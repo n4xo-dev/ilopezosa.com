@@ -1,23 +1,20 @@
-<div id="contact-section">
-  <h2>Contact Me</h2>
-  <p>Have questions, ideas, or just want to say hi? Feel free to reach out to me!</p>
-  <form method="post" hx-post="/contact" hx-target="#contact-response" hx-trigger="submit" hx-indicator="#loadingMessage">
-    <label for="name">Name:</label><br/>
-    <input type="text" id="name" name="name" placeholder="Your name" required><br/>
+<h2>Contact Me</h2>
+<p>Have questions, ideas, or just want to say hi? Feel free to reach out to me!</p>
+<form method="post" hx-post="/contact" hx-target="#contact-response" hx-trigger="submit" hx-indicator="#loadingMessage">
+  <label for="name">Name:</label><br/>
+  <input class="rounded-lg p-2 w-1/4" type="text" id="name" name="name" placeholder="Your name" required><br/>
 
-    <label for="email">Email:</label><br/>
-    <input type="email" id="email" name="email" placeholder="Your email" required><br/>
+  <label for="email">Email:</label><br/>
+  <input class="rounded-lg p-2 w-1/4" type="email" id="email" name="email" placeholder="Your email" required><br/>
 
-    <label for="message">Message:</label><br/>
-    <textarea id="message" name="message" placeholder="Your message" required></textarea><br/>
+  <label for="message">Message:</label><br/>
+  <textarea class="rounded-lg p-2 w-1/4" id="message" name="message" placeholder="Your message" required></textarea><br/>
 
-    <span id="html_element" required></span><br/>
-    
-    <input type="submit" value="Send Message">
-  </form>
+  <span id="recaptcha" required></span><br/>
+  
+  <button type="submit" value="Send Message" class="rounded-lg bg-slate-400 text-white font-bold p-3 hover:bg-slate-500 active:bg-slate-600 active:text-slate-200">Send message</button>
+</form>
 
-  <script src="https://www.google.com/recaptcha/enterprise.js?onload=onloadCallback&render=explicit" async defer></script>
+<script src="https://www.google.com/recaptcha/enterprise.js?onload=onloadCallback&render=explicit" async defer></script>
 
-  <div id="contact-response"></div>
-  <img src="./assets/sussy.webp" alt="Loading..." id="loadingMessage" class="htmx-indicator"/>
-</div>
+<div id="contact-response"></div>

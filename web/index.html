@@ -3,30 +3,38 @@
     <head>
         <title>iLopezosa</title>
         <script type="text/javascript">
-            var onloadCallback = function() {
-                grecaptcha.enterprise.render('html_element', {
+            function onloadCallback() {
+                grecaptcha.enterprise.render('recaptcha', {
                     'sitekey' : '6LeWGjMpAAAAAEhizXllkqYbD1LIkfu9zWINdv1K'
                 });
             };
+            function clearSections() {
+                document.getElementById("about-section").innerHTML = "";
+                document.getElementById("projects-section").innerHTML = "";
+                document.getElementById("contact-section").innerHTML = "";
+            }
         </script>
         <script src="https://unpkg.com/htmx.org@1.6.1"></script>
         <link rel="stylesheet" href="./output.css">
     </head>
     <body class="bg-slate-200">
-        <header class="text-slate-800 transition duration-300 hover:bg-white hover:text-black">
-            <a href="#home" hx-get="/home" hx-target="#content">
-                <h1 class="text-shadow-transparent text-7xl p-4 font-bold text-center">Ignacio Lopezosa Serrano</h1>
-            </a>
+        <header class="text-slate-800">
+            <h1 class="text-7xl p-4 font-bold text-center">Ignacio Lopezosa Serrano</h1>
+            <h2 class="text-5xl p-2 font-medium text-center">Multifaceted Software Engineer</h2>
         </header>
-        <nav class="bg-slate-300 sticky top-0 content">
-            <ul class="flex justify-center items-center text-3xl text-white font-bold uppercase">
-                <li class="mx-20 p-3 transition duration-150 hover:text-black"><a href="#about" hx-get="/about" hx-target="#content">About</a></li>
-                <li class="mx-20 p-3 transition duration-150 hover:text-black"><a href="#projects" hx-get="/projects" hx-target="#content">Projects</a></li>
-                <li class="mx-20 p-3 transition duration-150 hover:text-black"><a href="#contact" hx-get="/contact" hx-target="#content">Contact</a></li>
-            </ul>
-        </nav>
         
-        <main id="content" class="mx-10 my-20 text-2xl text-justify" hx-get="/home" hx-trigger="load"></main>
+        <section class="mx-20 p-5">
+            <p>Hi! I am Ignacio Lopezosa Serrano, commonly known as Nacho. And this is my webpage. Pretty isn't it? Well... I am mostly a BackEnd Engineer, so it is what it is.</p>
+            <p>Here you can learn a little <a class="text-blue-400 hover:text-blue-500 hover:underline" href="#about" hx-get="/about" hx-target="#content">about</a> me. You can take a look at the <a class="text-blue-400 hover:text-blue-500 hover:underline" href="#projects" hx-get="/projects" hx-target="#content">projects</a> I have worked on (or at least the ones I am proud enough to show you). And you can <a class="text-blue-400 hover:text-blue-500 hover:underline" href="#contact" hx-get="/contact" hx-target="#content">contact</a> me if there's anything you want to tell me. I try to respond as fast as possible.</p>
+            <p>For those that are curious. This page was built using only <a href="https://htmx.org/" class="text-blue-400 hover:text-blue-500 hover:underline">HTMX</a>, <a href="https://tailwindcss.com/" class="text-blue-400 hover:text-blue-500 hover:underline">TailwindCSS</a>, and <a href="https://go.dev/" class="text-blue-400 hover:text-blue-500 hover:underline">Go</a> with <a href="https://gofiber.io/" class="text-blue-400 hover:text-blue-500 hover:underline">Fiber</a>. A pretty minimal stack that is more than enough to build simple yet interactive and very performant web sites.</p>
+        </section>
+        
+        <button id="about" class="text-4xl font-bold uppercase mx-20 p-3 text-slate-500 transition duration-200 hover:text-slate-800 active:text-black focus:text-slate-800" hx-get="/about" hx-target="#about-section" onclick="clearSections()">About</button>
+        <section id="about-section" class="mx-20 p-5 transition-all transform duration-500"></section>
+        <button id="projects" class="text-4xl font-bold uppercase mx-20 p-3 text-slate-500 transition duration-200 hover:text-slate-800 active:text-black focus:text-slate-800" hx-get="/projects" hx-target="#projects-section" onclick="clearSections()">Projects</button>
+        <section id="projects-section" class="mx-20 p-5 transition-all transform duration-500"></section>
+        <button id="contact" class="text-4xl font-bold uppercase mx-20 p-3 text-slate-500 transition duration-200 hover:text-slate-800 active:text-black focus:text-slate-800" hx-get="/contact" hx-target="#contact-section" onclick="clearSections()">Contact</button>
+        <section id="contact-section" class="mx-20 p-5 transition-all transform duration-500"></section>
 
         <footer class="bg-slate-300 text-white">
             <div class="max-w-6xl mx-auto px-4 py-10 md:py-20">
@@ -43,16 +51,13 @@
                         <h5 class="uppercase font-bold mb-6 text-2xl">Quick Links</h5>
                         <ul class="text-slate-400 text-xl">
                             <li class="mb-4">
-                                <a href="#home" class="hover:text-slate-600 transition-colors duration-300" hx-get="/home" hx-target="#content">Home</a>
+                                <a href="#about" class="hover:text-slate-600 transition-colors duration-300">About</a>
                             </li>
                             <li class="mb-4">
-                                <a href="#about" class="hover:text-slate-600 transition-colors duration-300" hx-get="/about" hx-target="#content">About</a>
+                                <a href="#projects" class="hover:text-slate-600 transition-colors duration-300">Projects</a>
                             </li>
                             <li class="mb-4">
-                                <a href="#projects" class="hover:text-slate-600 transition-colors duration-300" hx-get="/projects" hx-target="#content">Projects</a>
-                            </li>
-                            <li class="mb-4">
-                                <a href="#contact" class="hover:text-slate-600 transition-colors duration-300" hx-get="/contact" hx-target="#content">Contact</a>
+                                <a href="#contact" class="hover:text-slate-600 transition-colors duration-300">Contact</a>
                             </li>
                         </ul>
                     </div>
